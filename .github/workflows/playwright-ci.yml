@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -37,7 +38,7 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests (${ { matrix.browser } })
+      - name: Run Playwright tests (${{ matrix.browser }})
         env:
           ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
           BASE_URL: ${{ secrets.BASE_URL }}

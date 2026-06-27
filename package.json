@@ -22,31 +22,31 @@
     "postinstall": "npx playwright install --with-deps"
   },
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "winston": "^3.10.0",
     "axios": "^1.7.5",
-    "chalk": "^5.3.0"
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "winston": "^3.10.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@playwright/test": "^1.61.1",
     "@types/node": "^20.11.0",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.17.0",
+    "allure-commandline": "^2.22.0",
+    "allure-playwright": "^3.10.2",
+    "axe-playwright": "^2.2.2",
+    "commitlint": "^17.0.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-playwright": "^1.0.0",
+    "exceljs": "^4.4.0",
     "husky": "^9.0.0",
     "lint-staged": "^14.0.0",
     "prettier": "^3.8.5",
     "rimraf": "^5.0.0",
-    "allure-playwright": "^3.10.2",
-    "allure-commandline": "^2.22.0",
-    "axe-playwright": "^2.2.2",
-    "cross-env": "^7.0.3",
-    "exceljs": "^5.4.0",
-    "commitlint": "^17.0.0",
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
     "typescript": "^5.6.0"
   },
   "lint-staged": {
