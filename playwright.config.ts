@@ -3,6 +3,8 @@ import { loadEnvironment, env } from './src/config/envConfig';
 
 loadEnvironment();
 
+const browserArgs = env.BROWSER_ARGS ? env.BROWSER_ARGS.split(',') : [];
+
 export default defineConfig({
   testDir: './tests',
   outputDir: './reports/playwright',
@@ -38,7 +40,7 @@ export default defineConfig({
     permissions: env.PERMISSIONS ? env.PERMISSIONS.split(',') : [],
     launchOptions: {
       slowMo: parseInt(env.SLOW_MO ?? '0', 10),
-      args: env.BROWSER_ARGS ? env.BROWSER_ARGS.split(',') : [],
+      args: [],
       proxy: env.PROXY ? { server: env.PROXY } : undefined,
     },
     storageState: env.STORAGE_STATE || undefined,
@@ -46,7 +48,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'], launchOptions: { args: browserArgs } },
     },
     {
       name: 'firefox',
@@ -58,11 +60,11 @@ export default defineConfig({
     },
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      use: { ...devices['Desktop Edge'], channel: 'msedge', launchOptions: { args: browserArgs } },
     },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { ...devices['Desktop Chrome'], channel: 'chrome', launchOptions: { args: browserArgs } },
     },
     {
       name: 'api',
