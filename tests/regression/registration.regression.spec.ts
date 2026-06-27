@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { HomePage } from '../../src/pages/home/HomePage';
 import { RegisterPage } from '../../src/pages/auth/RegisterPage';
 import { RandomDataGenerator } from '../../src/utils/RandomDataGenerator';
-import { env, loadEnvironment } from '../../src/config/envConfig';
+import { loadEnvironment } from '../../src/config/envConfig';
 
 loadEnvironment();
 

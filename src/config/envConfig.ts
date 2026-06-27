@@ -26,6 +26,7 @@ export interface EnvConfig {
   BROWSER_ARGS?: string;
   PROXY?: string;
   STORAGE_STATE?: string;
+  SLOW_MO?: string;
 }
 
 export const env: EnvConfig = process.env as EnvConfig;
