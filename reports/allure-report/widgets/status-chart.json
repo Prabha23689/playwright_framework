@@ -1,0 +1,1 @@
+[{"uid":"e71fbfd9a0dee6","name":"should login successfully with valid credentials","time":{"start":1782562691035,"stop":1782562695801,"duration":4766},"status":"passed","severity":"normal"},{"uid":"aaac3d6874e97588","name":"should create a new ParaBank account successfully","time":{"start":1782562691024,"stop":1782562695796,"duration":4772},"status":"passed","severity":"normal"}]

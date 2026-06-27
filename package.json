@@ -1,0 +1,64 @@
+{
+  "name": "parabank-playwright-framework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise-grade Playwright + TypeScript automation framework for ParaBank.",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "cross-env HEADLESS=false npx playwright test",
+    "test:chrome": "npx playwright test --project='Google Chrome'",
+    "test:chrome:headed": "npx playwright test --headed --project='Google Chrome'",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "test:negative": "npx playwright test --grep @negative",
+    "test:api": "npx playwright test --project=api --grep @api",
+    "lint": "eslint './**/*.{ts,tsx}' --fix",
+    "format": "prettier --write './**/*.{ts,tsx,json,md,yml,yaml}'",
+    "clean": "rimraf test-results reports .cache",
+    "report:html": "npx playwright show-report reports/html-report",
+    "report:html:serve": "npx playwright show-report reports/html-report",
+    "report:allure": "npx allure generate test-results/allure-results --clean -o reports/allure-report",
+    "report:allure:open": "npx allure open reports/allure-report",
+    "postinstall": "npx playwright install --with-deps"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "winston": "^3.10.0",
+    "axios": "^1.7.5",
+    "chalk": "^5.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^1.0.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^14.0.0",
+    "prettier": "^3.8.5",
+    "rimraf": "^5.0.0",
+    "allure-playwright": "^3.10.2",
+    "allure-commandline": "^2.22.0",
+    "axe-playwright": "^2.2.2",
+    "cross-env": "^7.0.3",
+    "exceljs": "^5.4.0",
+    "commitlint": "^17.0.0",
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "typescript": "^5.6.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}
