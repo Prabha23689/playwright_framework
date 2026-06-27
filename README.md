@@ -73,7 +73,9 @@ Use `.env`, `.env.dev`, `.env.qa`, `.env.stage`, `.env.prod` to manage environme
 
 ## CI/CD
 
-- GitHub Actions workflow: `.github/workflows/playwright.yml`
+- GitHub Actions workflows:
+  - `.github/workflows/playwright-ci.yml` — current CI pipeline with `workflow_dispatch`, multi-browser matrix, and Allure/artifact upload.
+  - `.github/workflows/playwright.yml` — legacy Playwright pipeline.
 - Azure DevOps pipeline: `azure-pipelines/azure-pipelines.yml`
 - Docker container: `Docker/Dockerfile`
 - Docker Compose: `Docker/docker-compose.yml`
@@ -105,3 +107,10 @@ Use `.env`, `.env.dev`, `.env.qa`, `.env.stage`, `.env.prod` to manage environme
 3. Create a new spec under `tests/`
 4. Use tags like `@smoke`, `@regression`, `@negative`
 5. Run with `npm test -- --grep @tag`
+
+## Cleanup Summary
+
+- `npm ci` is the recommended install step for CI.
+- GitHub Actions requires `BASE_URL` and `ENVIRONMENT` repository secrets.
+- CI artifacts are uploaded as `playwright-reports`; downloaded copies can be stored locally under `ci-artifacts/playwright-reports/`.
+- If a personal access token was exposed during setup, revoke it immediately in GitHub settings.
