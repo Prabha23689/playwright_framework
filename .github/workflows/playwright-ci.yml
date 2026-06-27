@@ -60,4 +60,5 @@ jobs:
             reports/allure-report
             reports/junit
             reports/json
+            reports/playwright
           retention-days: 14
