@@ -12,7 +12,7 @@ export class OpenNewAccountPage extends BasePage {
     this.accountTypeSelect = page.locator('select[id="type"]');
     this.fromAccountSelect = page.locator('select[id="fromAccountId"]');
     this.openNewAccountButton = page.locator('input[value="Open New Account"]');
-    this.successMessage = page.locator('#rightPanel .title');
+    this.successMessage = page.locator('h1.title', { hasText: 'Open New Account' });
   }
 
   async navigate(): Promise<void> {

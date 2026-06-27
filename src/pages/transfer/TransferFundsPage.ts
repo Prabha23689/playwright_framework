@@ -10,11 +10,11 @@ export class TransferFundsPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.amountInput = page.locator('input[name="amount"]');
-    this.fromAccountSelect = page.locator('select[name="fromAccountId"]');
-    this.toAccountSelect = page.locator('select[name="toAccountId"]');
+    this.amountInput = page.locator('#amount');
+    this.fromAccountSelect = page.locator('#fromAccountId');
+    this.toAccountSelect = page.locator('#toAccountId');
     this.transferButton = page.locator('input[value="Transfer"]');
-    this.transferMessage = page.locator('#rightPanel .title');
+    this.transferMessage = page.locator('h1.title', { hasText: 'Transfer Complete!' });
   }
 
   async navigate(): Promise<void> {
